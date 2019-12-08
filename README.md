@@ -2,27 +2,30 @@
 
 Spark project for MS Big Data Telecom based on Kickstarter campaigns 2019-2020
 
+To hand in the TP, I only updated the source code in `src/main/scala/paristech/` and data in `src/main/resources/train/`. The `build_and_submit.sh` has changed in my own PC to suit for my own path and these "build" files are omitted to reduce the size.  
+
 
 ## Data cleaning 
 
-For data cleaning part in `src/main/scala/paristech/Preprocessor.scala`, the source is in `src/main/resources/train/train_clean.csv`, and the output is in `src/main/resources/preprocessed`. 
+For data cleaning part in `src/main/scala/paristech/Preprocessor.scala`, the source is in `src/main/resources/train/train_clean.csv`, and the output will be in `src/main/resources/preprocessed`. 
 
- It uses the `UDF`, `drop`, `filer` and some spark sql functions to do the cleaning and transformation of the data.  
+It uses the `UDF`, `drop`, `filer` and some spark sql functions to do the cleaning and transformation of the data.  
 
 
 
 ## Model Training
 
-The model training part is in `src/main/scala/paristech/Trainer.scala`, data source is the output of the prreceding step in `src/main/resources/preprocessed` and 
-For this project, logistic regression model is mainly used and finally the best model with the grid research  is saved in `src/main/resources/model`.
+The model training part is in `src/main/scala/paristech/Trainer.scala`, data source is the output of the prreceding step in `src/main/resources/preprocessed`.
+
+For this project, logistic regression model is mainly used and finally the best model with the grid research is saved in `src/main/resources/model`.
 
 I also compared the F1 score with the classification model of Linear Support Vector Machine and Naive Bayes.
 
 ### Result
 
-From the results, we can see that the Linear Support Vector Machine has the best result similar with the result of logistic regression with grid search. The Naive Bayes has the worst result.
+From the results, we can see that the Linear Support Vector Machine has the best result similar to the result of logistic regression with grid search. The Naive Bayes has the worst result.
 
-The grid research for Linear SVM and Naive Bayes is not implemented because it requires a lot of computing capacity and crashed sometimes in my own pc.
+The grid research for Linear SVM and Naive Bayes is not added at last because it requires a lot of computing capacity and crashed sometimes in my own pc.
 
 #### Logistic regression
 
